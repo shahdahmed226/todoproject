@@ -1,0 +1,24 @@
+{% extends "main/components/base.html" %} 
+
+{% block title %}
+    Create Task
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+
+    <h3 class="mb-4 text-center">Create New Task</h3>
+    
+    <form method="POST" class="shadow p-4 bg-light rounded">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <div class="d-flex justify-content-between mt-4">
+            <input type="submit" class="btn btn-primary" value="Create Task">
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+    
+</div>
+{% endblock %}
